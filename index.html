@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Weather Dashboard</h1>
+    
+        <!-- This form will be where users input data about the movies -->
+        <form id="city-form">
+          <label for="city-input">Search for a City</label>
+          <input type="text" id="city-input"><br>
+    
+          <!-- This button will trigger our AJAX call -->
+          <input id="find-city" type="submit" value="City Search">
+        </form>
+    
+        <!-- We'll be dumping our JSON contents in here -->
+        <div id="movie-view"></div>
+
+    <div class="city"></div>
+    <div class="temp"></div>
+    <div class="humidity"></div>
+    <div class="wind"></div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // This is our API key. Add your own API key between the ""
+      var APIKey = "9e9880462ec11527ce99f1b84aebc544";
+
+      $("#find-city").on("click", function(event) {
+
+// event.preventDefault() can be used to prevent an event's default behavior.
+// Here, it prevents the submit button from trying to submit a form when clicked
+event.preventDefault();
+
+// Here we grab the text from the input box
+var city = $("#city-input").val();
+
+// Here we construct our URL
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=" + APIKey;
+
+
+  
+  
+      // We then created an AJAX call
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+  
+        // Create CODE HERE to Log the queryURL
+        console.log(queryURL)
+        // Create CODE HERE to log the resulting object
+        console.log(response)
+        console.log(response.main.humidity)
+        console.log(response.wind.speed)
+        // Create CODE HERE to calculate the temperature (converted from Kelvin)
+        var tempF=(response.main.temp - 273.15) * 1.80 + 32;
+        console.log(tempF)
+  
+        // Create CODE HERE to transfer content to HTML
+  $(".temp").text("Temperature(F): " + tempF.toFixed(2));
+  $(".humidity").text("Humidity: " + response.main.humidity+"%");
+  $(".wind").text("Wind Speed: "+response.wind.speed+" MPH");
+  
+  
+      });
+    });
+    </script>
+</body>
+</html>
