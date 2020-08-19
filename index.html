@@ -1,59 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
 
     <title>Weather Dashboard</title>
 </head>
+
 <body>
-    
+
+
 
     <div class="container-fluid">
-        <div class="head">
-                    <h1>Weather Dashboard</h1>
-                    </div>
-        <div class="row">
-            <div class="col-4" id="col1">
-            
-            
-    
-        <!-- This form will be where users input data about the cities -->
-        <form id="city-form">
-          <label for="city-input"><strong>Search for a City</strong></label>
-          <input type="text" id="city-input"><br>
-    
-          <!-- This button will trigger our AJAX call -->
-          <input id="find-city" type="submit" value="City Search">
-        </form>
-    
-        
-</div>
-<div class="col-md-8" id="currentWeather">
-    <!-- We'll be dumping our JSON contents in here -->
-    <div class="jumbotron"><h2>Current Weather</h2></div>
-    <div id="city-status"></div>
-    <div class="name"></div>
-    <div class="city"></div>
-    <div class="temp"></div>
-    <div class="humidity"></div>
-    <div class="wind"></div>
-    <div class="forcast"></div>
-    
-    </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./Assets/js/script.js"></script>
-    <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <h1>Weather Dashboard</h1>
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    </div>
+    <div class="row">
+        <div class="col-4" id="col1">
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
+
+            <!-- This form will be where users input data about the cities -->
+            <form id="city-form">
+                <label for="city-input"><strong>Search for a City</strong></label>
+                <input type="text" id="city-input"><br>
+
+                <!-- This button will trigger our AJAX call -->
+                <input id="find-city" type="submit" value="City Search">
+            </form>
+
+
+        </div>
+        <div class="col-md-8" id="currentWeather">
+            <!-- dumping our JSON contents in here -->
+            
+            <div id="city-status">
+                <div class="name"></div>
+                <div class="city"></div>
+                <div class="temp"></div>
+                <div class="humidity"></div>
+                <div class="wind"></div>
+                <div class="uvIndex"></div>
+
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./Assets/js/script.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

@@ -34,11 +34,21 @@ $.ajax({
   var tempF=(response.main.temp - 273.15) * 1.80 + 32;
   console.log(tempF)
 
+  
+  // Retrieving the URL for the image
+  var imgURL = response.weather[0].description;
+
+  // Creating an element to hold the image
+  var image = $("<img>").attr("src", imgURL);
+
   //transfer content to HTML
 $(".temp").text("Temperature(F): " + tempF.toFixed(2));
 $(".humidity").text("Humidity: " + response.main.humidity+"%");
 $(".wind").text("Wind Speed: "+response.wind.speed+" MPH");
-$(".name").text(response.name + response.weather.icon);
+$(".name").text(response.name + image);
+$(".uvIndex").text("UV Index: ")
+
+console.log(response)
 
 });
 

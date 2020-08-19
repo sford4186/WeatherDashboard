@@ -12,7 +12,7 @@ body {
     padding: 0;
 }
 
-h2 {
+.name {
     font-size: 35px;
     font-weight: 600;
     text-align: center
@@ -24,8 +24,7 @@ h2 {
     text-align: center;
 }
 
-.jumbotron{
-    margin-bottom: 0px; 
+#currentWeather{
     background-color: blue;
     color: white;
 }
