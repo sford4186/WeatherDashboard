@@ -110,7 +110,7 @@ $(document).ready(function () {
     console.log('<=====five======>')
 
     //AJAX call for 5 day forecast
-    var fivedayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
+    var fivedayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
     $.get(fivedayURL).then(function (response) {
       console.log(response)
       $(".fiveDay").empty()
