@@ -62,7 +62,7 @@ $(document).ready(function () {
      
       // Creating an element to hold the image
       var image = $("<img>").attr("src", imgURL);
-      var attr="red"
+      
 
       //transfer content to HTML
       $(".temp").text("Temperature(F): " + tempF.toFixed(2));
@@ -78,11 +78,13 @@ $(document).ready(function () {
 
         //assigning attributes to UV Index based on conditions
         if (res.value > 7){
-          attr="red"
-          uvIndex.setAttribute("class", "red");
-        } else if (res.value===6 || res.value===7){
-          attr="orange"
-          uvIndex.setAttribute("class", "orange");
+          
+          $(uvIndex).addClass("red");
+          
+        } else if (res.value<8 && res.value >5){
+          
+          $(uvIndex).removeClass("red");
+          $(uvIndex).addClass("orange");
 
         }
 
