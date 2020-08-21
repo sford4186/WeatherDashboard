@@ -75,7 +75,7 @@ $(document).ready(function () {
       name.append(image)
       $(".name").empty()
       $(".name").append(name)
-      var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + '&lat=' + response.coord.lat + '&lon=' + response.coord.lon
+      var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + '&lat=' + response.coord.lat + '&lon=' + response.coord.lon
     
 
         $.get(uvURL).then(function (res) {
