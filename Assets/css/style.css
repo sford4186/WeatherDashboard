@@ -22,13 +22,13 @@ body {
     width: 60%;
     margin: auto;
     text-align: center;
-    background-color: blue;
+    /* background-color: blue; */
     color: white;
     border-radius: 25px;
 }
 
 #currentWeather{
-    background-color: blue;
+    /* background-color: blue; */
     color: white;
     /* width: 60%; */
     margin: auto;
