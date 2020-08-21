@@ -21,12 +21,15 @@ $(document).ready(function () {
     // grab the text from the input box
     var city = $("#city-input").val();
     cities.push(city)
+    //storing the searched cities in a string
     localStorage.setItem("weather", JSON.stringify(cities))
+    
     writeCities()
     citySearch(city)
 
     
   });
+
   function writeCities() {
     $("#cities").empty();
     for (a = 0; a < cities.length; a++) {
@@ -51,7 +54,7 @@ $(document).ready(function () {
       console.log(response.main.humidity)
       console.log(response.main.temp)
      
-      //assigning temperature
+      //assigning temperature to var
       var tempF = response.main.temp;
       console.log(tempF)
 
@@ -73,8 +76,7 @@ $(document).ready(function () {
       $(".name").empty()
       $(".name").append(name)
       var uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + response.coord.lat + '&lon=' + response.coord.lon
-     // $.get(uvURL).then(function (res) {
-     //   $(".uvIndex").text("UV Index: " + res.value)
+    
 
         $.get(uvURL).then(function (res) {
           var newSpan = $("<span>").text(res.value)
@@ -107,7 +109,7 @@ $(document).ready(function () {
   function makeFiveDay(theCity) {
     console.log('<=====five======>')
 
-    //AJAX call
+    //AJAX call for 5 day forecast
     var fivedayURL = "https:api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
     $.get(fivedayURL).then(function (response) {
       console.log(response)
@@ -116,11 +118,10 @@ $(document).ready(function () {
         var curr = response.list[i]
         if (curr.dt_txt.includes("12:00")) {
           var newDiv = $("<div class='card bg-primary text-light col-md-2'>")
-         // newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png' + '" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
           newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png" width="50px" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
           $(".fiveDay").append(newDiv)
           console.log(response.list[i].weather[0].icon)
-          //console.log(response.weather[0].icon)
+          
         }
       }
 

@@ -1,11 +1,11 @@
 # WeatherDashboard
 
 ## Description
-This is an application that will allow the end user to enter a city and retrieve current and future weather data.  The app uses HTML, CSS and jQuery.
+This is an application that will allow the end user to enter a city and retrieve current and future weather data.  The app uses HTML, CSS, JQuery and a Third Party Web API.
 
-## Screenshot of website  
-![Screenshot of deployed site](./Assets/screenshot.PNG)
+## Screenshot of Website  
+![WeatherDashboard screenshot](Assets/screenshot.png);
 
 ## Deployed site
 
-[Day-Planner](https://sford4186.github.io/Day-Planner/)
+[WeatherDashboard](https://sford4186.github.io/WeatherDashboard/)
