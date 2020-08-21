@@ -60,7 +60,7 @@ $(document).ready(function () {
 
       // Retrieving the URL for the image
       var imgCode = response.weather[0].icon;
-      var imgURL = "http://openweathermap.org/img/w/" + imgCode + ".png";
+      var imgURL = "https://openweathermap.org/img/w/" + imgCode + ".png";
 
      
       // Creating an element to hold the image
