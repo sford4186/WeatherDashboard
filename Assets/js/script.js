@@ -41,7 +41,7 @@ $(document).ready(function () {
   function citySearch(city) {
 
 //API query URL with temp conversion
-    var queryURL = "https:api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
 
 
     // Created an AJAX call
