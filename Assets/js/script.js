@@ -60,7 +60,7 @@ $(document).ready(function () {
 
       // Retrieving the URL for the image
       var imgCode = response.weather[0].icon;
-      var imgURL = "http://openweathermap.org/img/w/" + imgCode + ".png";
+      var imgURL = "https://openweathermap.org/img/w/" + imgCode + ".png";
 
      
       // Creating an element to hold the image
@@ -110,15 +110,15 @@ $(document).ready(function () {
     console.log('<=====five======>')
 
     //AJAX call for 5 day forecast
-    var fivedayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
+    var fivedayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
     $.get(fivedayURL).then(function (response) {
       console.log(response)
       $(".fiveDay").empty()
       for (i = 0; i < response.list.length; i++) {
         var curr = response.list[i]
         if (curr.dt_txt.includes("12:00")) {
-          var newDiv = $("<div class='card bg-primary text-light col-md-2'>")
-          newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png" width="50px" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
+          var newDiv = $("<div class='card bg-primary text-light col-md-2' style='text-align: center'>")
+          newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'https://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png" width="50px" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
           $(".fiveDay").append(newDiv)
           console.log(response.list[i].weather[0].icon)
           
