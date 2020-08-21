@@ -52,5 +52,11 @@ body {
 }
 
 .orange {
-    background-color: orange;
+    background-color: darkorange;
+}
+.yellow{
+    background-color:yellow;
+}
+.green{
+    background-color:green;
 }

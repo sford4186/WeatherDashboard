@@ -73,22 +73,30 @@ $(document).ready(function () {
       $(".name").empty()
       $(".name").append(name)
       var uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + response.coord.lat + '&lon=' + response.coord.lon
-      $.get(uvURL).then(function (res) {
-        $(".uvIndex").text("UV Index: " + res.value)
+     // $.get(uvURL).then(function (res) {
+     //   $(".uvIndex").text("UV Index: " + res.value)
 
+        $.get(uvURL).then(function (res) {
+          var newSpan = $("<span>").text(res.value)
         //assigning attributes to UV Index based on conditions
+        $(".uvIndex").text("UV Index: ")
         if (res.value > 7){
           
-          $(uvIndex).addClass("red");
+          newSpan.addClass("red");
           
         } else if (res.value<8 && res.value >5){
           
-          $(uvIndex).removeClass("red");
-          $(uvIndex).addClass("orange");
-
+          newSpan.addClass("orange");
+          
+        } else if(res.value>4 && res.value<6) {
+          newSpan.addClass("yellow")
+        } else {
+          newSpan.addClass("green")
         }
-
+        $(".uvIndex").append(newSpan)
       })
+
+        
      
       console.log(response)
       
@@ -108,8 +116,8 @@ $(document).ready(function () {
         var curr = response.list[i]
         if (curr.dt_txt.includes("12:00")) {
           var newDiv = $("<div class='card bg-primary text-light col-md-2'>")
-          newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png' + '" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
-          
+         // newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png' + '" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
+          newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png" width="50px" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
           $(".fiveDay").append(newDiv)
           console.log(response.list[i].weather[0].icon)
           //console.log(response.weather[0].icon)
