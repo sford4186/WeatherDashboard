@@ -5,14 +5,13 @@ var cities = JSON.parse(localStorage.getItem("weather")) || []
 
 
 $(document).ready(function () {
+
   writeCities()
   if (cities.length) {
     citySearch(cities[cities.length-1])
   }
-  
-
-  
-
+ 
+ 
   $("#find-city").on("click", function (event) {
 
     // event.preventDefault() can be used to prevent an event's default behavior.
@@ -51,7 +50,8 @@ $(document).ready(function () {
       //test
       console.log(response.main.humidity)
       console.log(response.main.temp)
-
+     
+      //assigning temperature
       var tempF = response.main.temp;
       console.log(tempF)
 
@@ -62,6 +62,7 @@ $(document).ready(function () {
      
       // Creating an element to hold the image
       var image = $("<img>").attr("src", imgURL);
+      var attr="red"
 
       //transfer content to HTML
       $(".temp").text("Temperature(F): " + tempF.toFixed(2));
@@ -74,6 +75,16 @@ $(document).ready(function () {
       var uvURL = 'http://api.openweathermap.org/data/2.5/uvi?appid=' + APIKey + '&lat=' + response.coord.lat + '&lon=' + response.coord.lon
       $.get(uvURL).then(function (res) {
         $(".uvIndex").text("UV Index: " + res.value)
+
+        //assigning attributes to UV Index based on conditions
+        if (res.value > 7){
+          attr="red"
+          uvIndex.setAttribute("class", "red");
+        } else if (res.value===6 || res.value===7){
+          attr="orange"
+          uvIndex.setAttribute("class", "orange");
+
+        }
 
       })
      
