@@ -118,7 +118,7 @@ $(document).ready(function () {
         var curr = response.list[i]
         if (curr.dt_txt.includes("12:00")) {
           var newDiv = $("<div class='card bg-primary text-light col-md-2' style='text-align: center'>")
-          newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'http://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png" width="50px" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
+          newDiv.append(moment.unix(curr.dt).format("L")+ '<img src="' +'https://openweathermap.org/img/w/' + response.list[i].weather[0].icon + '.png" width="50px" alt="weather icon">' + '</div>'+"<div> Temp: "+response.list[i].main.temp +"</div>"+"<div> Humidity: "+response.list[i].main.humidity+"%</div>")
           $(".fiveDay").append(newDiv)
           console.log(response.list[i].weather[0].icon)
           
