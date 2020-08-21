@@ -15,39 +15,48 @@
 
 
 
+    <h1>Weather Dashboard</h1>
     <div class="container-fluid">
-        <h1>Weather Dashboard</h1>
-
-    </div>
-    <div class="row">
-        <div class="col-4" id="col1">
 
 
-
-            <!-- This form will be where users input data about the cities -->
-            <form id="city-form">
-                <label for="city-input"><strong>Search for a City</strong></label>
-                <input type="text" id="city-input"><br>
-
-                <!-- This button will trigger our AJAX call -->
-                <input id="find-city" type="submit" value="City Search">
-            </form>
+        <div class="row">
+            <div class="col-3" id="col1">
 
 
-        </div>
-        <div class="col-md-8" id="currentWeather">
-            <!-- dumping our JSON contents in here -->
-            
-            <div id="city-status">
-                <div class="name"></div>
-                <div class="city"></div>
-                <div class="temp"></div>
-                <div class="humidity"></div>
-                <div class="wind"></div>
-                <div class="uvIndex"></div>
+
+                <!-- This form will be where users input data about the cities -->
+                <form id="city-form">
+                    <label for="city-input"><strong>Search for a City</strong></label>
+                    <input type="text" id="city-input"><br>
+
+                    <!-- This button will trigger our AJAX call -->
+                    <input id="find-city" type="submit" value="City Search">
+                </form>
+                <div id="cities">
+                    
+                </div>
 
             </div>
+            <div class="col-md-9">
+                <div id="currentWeather">
+                    <!-- dumping our JSON contents in here -->
+
+                    <div id="city-status">
+                        <div class="name"></div>
+                        <div class="city"></div>
+                        <div class="temp"></div>
+                        <div class="humidity"></div>
+                        <div class="wind"></div>
+                        <div class="uvIndex"></div>
+
+                    </div>
+                </div>
+                <div class="fiveDay mt-2 row "></div>
+            </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+            integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
+            crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="./Assets/js/script.js"></script>
         <!-- jQuery library -->

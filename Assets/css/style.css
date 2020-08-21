@@ -13,7 +13,7 @@ body {
 }
 
 .name {
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
     text-align: center
 }
@@ -22,9 +22,18 @@ body {
     width: 60%;
     margin: auto;
     text-align: center;
+    background-color: blue;
+    color: white;
+    border-radius: 25px;
 }
 
 #currentWeather{
     background-color: blue;
     color: white;
+    /* width: 60%; */
+    margin: auto;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    border-radius: 25px;
 }
